@@ -7,5 +7,5 @@ git clone https://github.com/4you6kh/Just_Phiser/
 
 cd Just_Phiser 
 
-pip -r install requirements.txt
+pip install -r requirements.txt
 ```

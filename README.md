@@ -12,6 +12,6 @@ pip install -r requirements.txt
 
 ## Usage 
 ```
-Python3 just_phiser.py
+Python3 Just_Phisher.py
 Then choose the number of the website that you want to generate 
 ```

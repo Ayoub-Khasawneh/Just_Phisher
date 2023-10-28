@@ -1,5 +1,5 @@
 # Just_Phisher
-Just_Phiser is an educational project developed for one of the courses in my university and its a Phishing Tool for Security Awareness.
+Just_Phisher is an educational project developed for one of the courses in my university and its a Phishing Tool for Security Awareness.
 
 ## Installation
 ```
